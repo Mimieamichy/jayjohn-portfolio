@@ -165,13 +165,10 @@ function Hero() {
   );
 }
 
-function SectionHeading({ kicker, title }: { kicker: string; title: string }) {
+function SectionHeading({ title }: { kicker?: string; title: string }) {
   return (
-    <div className="mb-16 flex flex-col items-start">
-      <span className="font-display tracking-mega text-[10px] text-accent uppercase mb-3">
-        {kicker}
-      </span>
-      <h2 className="section-title text-3xl md:text-5xl text-foreground">{title}</h2>
+    <div className="mb-12 md:mb-16 flex flex-col items-start">
+      <h2 className="section-title text-2xl sm:text-3xl md:text-5xl text-foreground">{title}</h2>
       <span className="mt-6 block h-px w-24 hairline" />
     </div>
   );
