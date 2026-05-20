@@ -179,7 +179,7 @@ function About() {
     <section id="about" className="relative py-32 px-6 lg:px-12">
       <div className="mx-auto max-w-6xl grid md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
-          <SectionHeading kicker="01 — About" title="About" />
+          <SectionHeading title="About" />
         </div>
         <div className="md:col-span-7 md:col-start-6 border-l border-border pl-8 md:pl-12">
           <p className="text-lg md:text-xl font-light leading-relaxed text-foreground/90">
