@@ -161,10 +161,6 @@ function Hero() {
           <span className="h-px w-12 hairline" />
         </div>
       </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-muted-foreground">
-        <span className="text-[10px] tracking-wider2 uppercase">Scroll</span>
-        <span className="h-10 w-px hairline" />
-      </div>
     </section>
   );
 }
