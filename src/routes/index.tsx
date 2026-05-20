@@ -213,7 +213,7 @@ function Skills() {
   return (
     <section id="skills" className="relative py-32 px-6 lg:px-12 bg-deep">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading kicker="02 — Expertise" title="Skills" />
+        <SectionHeading title="Skills" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {SKILLS.map((s) => (
             <div key={s.group} className="bg-deep p-8 hover:bg-background/40 transition-colors">
