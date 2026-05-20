@@ -95,7 +95,28 @@ function Index() {
       <Certifications />
       <Contact />
       <Footer />
+      <BottomNav />
     </div>
+  );
+}
+
+function BottomNav() {
+  return (
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-t border-border pb-[env(safe-area-inset-bottom)]">
+      <ul className="grid grid-cols-6">
+        {NAV.map(({ id, label, Icon }) => (
+          <li key={id}>
+            <a
+              href={`#${id}`}
+              className="flex flex-col items-center gap-1 py-2.5 text-[10px] tracking-wider2 uppercase text-muted-foreground hover:text-accent transition-colors"
+            >
+              <Icon className="h-4 w-4" />
+              <span>{label}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }
 
