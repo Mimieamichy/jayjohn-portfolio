@@ -343,7 +343,7 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="border-t border-border py-10 px-6 lg:px-12">
+    <footer className="border-t border-border py-10 pb-28 md:pb-10 px-6 lg:px-12">
       <div className="mx-auto max-w-6xl flex flex-col sm:flex-row justify-between items-center gap-4 text-xs tracking-wider2 uppercase text-muted-foreground">
         <span>© 2025 Joseph John</span>
         <span>Data Scientist Portfolio</span>
