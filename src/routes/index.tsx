@@ -176,7 +176,7 @@ function SectionHeading({ title }: { kicker?: string; title: string }) {
 
 function About() {
   return (
-    <section id="about" className="relative py-32 px-6 lg:px-12">
+    <section id="about" className="relative py-20 md:py-32 px-5 md:px-6 lg:px-12">
       <div className="mx-auto max-w-6xl grid md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
           <SectionHeading title="About" />
@@ -211,7 +211,7 @@ function About() {
 
 function Skills() {
   return (
-    <section id="skills" className="relative py-32 px-6 lg:px-12 bg-deep">
+    <section id="skills" className="relative py-20 md:py-32 px-5 md:px-6 lg:px-12 bg-deep">
       <div className="mx-auto max-w-6xl">
         <SectionHeading title="Skills" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
@@ -237,7 +237,7 @@ function Skills() {
 
 function Projects() {
   return (
-    <section id="projects" className="relative py-32 px-6 lg:px-12">
+    <section id="projects" className="relative py-20 md:py-32 px-5 md:px-6 lg:px-12">
       <div className="mx-auto max-w-6xl">
         <SectionHeading title="Projects" />
         <ul className="border-t border-border">
@@ -279,7 +279,7 @@ function Projects() {
 
 function Certifications() {
   return (
-    <section id="certifications" className="relative py-32 px-6 lg:px-12 bg-deep">
+    <section id="certifications" className="relative py-20 md:py-32 px-5 md:px-6 lg:px-12 bg-deep">
       <div className="mx-auto max-w-6xl grid md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
           <SectionHeading title="Certifications" />
@@ -298,7 +298,7 @@ function Certifications() {
 
 function Contact() {
   return (
-    <section id="contact" className="relative py-32 px-6 lg:px-12">
+    <section id="contact" className="relative py-20 md:py-32 px-5 md:px-6 lg:px-12">
       <div className="mx-auto max-w-6xl">
         <SectionHeading title="Contact" />
         <div className="grid md:grid-cols-2 gap-12">
