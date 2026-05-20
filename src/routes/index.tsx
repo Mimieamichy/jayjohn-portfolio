@@ -300,7 +300,7 @@ function Contact() {
   return (
     <section id="contact" className="relative py-32 px-6 lg:px-12">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading kicker="05 — Let's talk" title="Contact" />
+        <SectionHeading title="Contact" />
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <p className="text-xl md:text-2xl font-light leading-relaxed text-foreground/90 max-w-md">
