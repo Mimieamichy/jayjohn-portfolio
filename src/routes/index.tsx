@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ParticlesBackground } from "@/components/ParticlesBackground";
-import { Mail, Phone, Github, Twitter, ArrowUpRight, Download } from "lucide-react";
+import { Mail, Phone, Github, Twitter, ArrowUpRight, Download, User, Sparkles, FolderGit2, Award, Send, Home } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
