@@ -239,18 +239,15 @@ function Projects() {
   return (
     <section id="projects" className="relative py-32 px-6 lg:px-12">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading kicker="03 — Selected work" title="Projects" />
+        <SectionHeading title="Projects" />
         <ul className="border-t border-border">
           {PROJECTS.map((p) => (
             <li
               key={p.n}
-              className="group border-b border-border py-10 grid md:grid-cols-12 gap-6 items-start hover:bg-background/40 transition-colors cursor-pointer"
+              className="group border-b border-border py-8 md:py-10 grid md:grid-cols-12 gap-4 md:gap-6 items-start hover:bg-background/40 transition-colors cursor-pointer"
             >
-              <div className="md:col-span-1 font-display tracking-wider2 text-xs text-muted-foreground pt-2">
-                {p.n}
-              </div>
-              <div className="md:col-span-4">
-                <h3 className="font-display text-2xl md:text-3xl font-light tracking-tight">
+              <div className="md:col-span-5">
+                <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-light tracking-tight">
                   {p.title}
                 </h3>
               </div>
