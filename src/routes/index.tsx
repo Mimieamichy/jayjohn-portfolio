@@ -29,11 +29,12 @@ export const Route = createFileRoute("/")({
 });
 
 const NAV = [
-  { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
-  { id: "projects", label: "Projects" },
-  { id: "certifications", label: "Certs" },
-  { id: "contact", label: "Contact" },
+  { id: "top", label: "Home", Icon: Home },
+  { id: "about", label: "About", Icon: User },
+  { id: "skills", label: "Skills", Icon: Sparkles },
+  { id: "projects", label: "Projects", Icon: FolderGit2 },
+  { id: "certifications", label: "Certs", Icon: Award },
+  { id: "contact", label: "Contact", Icon: Send },
 ];
 
 const SKILLS = [
