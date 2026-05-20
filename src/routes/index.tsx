@@ -282,14 +282,11 @@ function Certifications() {
     <section id="certifications" className="relative py-32 px-6 lg:px-12 bg-deep">
       <div className="mx-auto max-w-6xl grid md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
-          <SectionHeading kicker="04 — Credentials" title="Certifications" />
+          <SectionHeading title="Certifications" />
         </div>
-        <ul className="md:col-span-7 md:col-start-6 border-l border-border">
-          {CERTS.map((c, i) => (
-            <li key={c} className="pl-8 md:pl-12 py-5 border-b border-border flex items-baseline gap-5">
-              <span className="font-display text-xs text-muted-foreground tracking-wider2">
-                0{i + 1}
-              </span>
+        <ul className="md:col-span-7 md:col-start-6 md:border-l md:border-border">
+          {CERTS.map((c) => (
+            <li key={c} className="md:pl-12 py-4 md:py-5 border-b border-border">
               <span className="text-base md:text-lg font-light">{c}</span>
             </li>
           ))}
