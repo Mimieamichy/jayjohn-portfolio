@@ -122,7 +122,7 @@ function BottomNav() {
 
 function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/40 border-b border-border">
+    <header className="hidden md:block fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/40 border-b border-border">
       <div className="mx-auto max-w-7xl px-6 lg:px-12 h-16 flex items-center justify-between">
         <a href="#top" className="font-display tracking-wider2 text-sm">
           JOSEPH&nbsp;·&nbsp;JOHN
