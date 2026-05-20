@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ParticlesBackground } from "@/components/ParticlesBackground";
-import { Mail, Phone, Github, Twitter, ArrowUpRight, Download } from "lucide-react";
+import { Mail, Phone, Github, Twitter, ArrowUpRight, Download, User, Sparkles, FolderGit2, Award, Send, Home } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -29,11 +29,12 @@ export const Route = createFileRoute("/")({
 });
 
 const NAV = [
-  { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
-  { id: "projects", label: "Projects" },
-  { id: "certifications", label: "Certs" },
-  { id: "contact", label: "Contact" },
+  { id: "top", label: "Home", Icon: Home },
+  { id: "about", label: "About", Icon: User },
+  { id: "skills", label: "Skills", Icon: Sparkles },
+  { id: "projects", label: "Projects", Icon: FolderGit2 },
+  { id: "certifications", label: "Certs", Icon: Award },
+  { id: "contact", label: "Contact", Icon: Send },
 ];
 
 const SKILLS = [
@@ -94,13 +95,34 @@ function Index() {
       <Certifications />
       <Contact />
       <Footer />
+      <BottomNav />
     </div>
+  );
+}
+
+function BottomNav() {
+  return (
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-t border-border pb-[env(safe-area-inset-bottom)]">
+      <ul className="grid grid-cols-6">
+        {NAV.map(({ id, label, Icon }) => (
+          <li key={id}>
+            <a
+              href={`#${id}`}
+              className="flex flex-col items-center gap-1 py-2.5 text-[10px] tracking-wider2 uppercase text-muted-foreground hover:text-accent transition-colors"
+            >
+              <Icon className="h-4 w-4" />
+              <span>{label}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }
 
 function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/40 border-b border-border">
+    <header className="hidden md:block fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/40 border-b border-border">
       <div className="mx-auto max-w-7xl px-6 lg:px-12 h-16 flex items-center justify-between">
         <a href="#top" className="font-display tracking-wider2 text-sm">
           JOSEPH&nbsp;·&nbsp;JOHN
@@ -139,21 +161,14 @@ function Hero() {
           <span className="h-px w-12 hairline" />
         </div>
       </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-muted-foreground">
-        <span className="text-[10px] tracking-wider2 uppercase">Scroll</span>
-        <span className="h-10 w-px hairline" />
-      </div>
     </section>
   );
 }
 
-function SectionHeading({ kicker, title }: { kicker: string; title: string }) {
+function SectionHeading({ title }: { kicker?: string; title: string }) {
   return (
-    <div className="mb-16 flex flex-col items-start">
-      <span className="font-display tracking-mega text-[10px] text-accent uppercase mb-3">
-        {kicker}
-      </span>
-      <h2 className="section-title text-3xl md:text-5xl text-foreground">{title}</h2>
+    <div className="mb-12 md:mb-16 flex flex-col items-start">
+      <h2 className="section-title text-2xl sm:text-3xl md:text-5xl text-foreground">{title}</h2>
       <span className="mt-6 block h-px w-24 hairline" />
     </div>
   );
@@ -161,10 +176,10 @@ function SectionHeading({ kicker, title }: { kicker: string; title: string }) {
 
 function About() {
   return (
-    <section id="about" className="relative py-32 px-6 lg:px-12">
+    <section id="about" className="relative py-20 md:py-32 px-5 md:px-6 lg:px-12">
       <div className="mx-auto max-w-6xl grid md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
-          <SectionHeading kicker="01 — About" title="About" />
+          <SectionHeading title="About" />
         </div>
         <div className="md:col-span-7 md:col-start-6 border-l border-border pl-8 md:pl-12">
           <p className="text-lg md:text-xl font-light leading-relaxed text-foreground/90">
@@ -196,9 +211,9 @@ function About() {
 
 function Skills() {
   return (
-    <section id="skills" className="relative py-32 px-6 lg:px-12 bg-deep">
+    <section id="skills" className="relative py-20 md:py-32 px-5 md:px-6 lg:px-12 bg-deep">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading kicker="02 — Expertise" title="Skills" />
+        <SectionHeading title="Skills" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {SKILLS.map((s) => (
             <div key={s.group} className="bg-deep p-8 hover:bg-background/40 transition-colors">
@@ -222,20 +237,17 @@ function Skills() {
 
 function Projects() {
   return (
-    <section id="projects" className="relative py-32 px-6 lg:px-12">
+    <section id="projects" className="relative py-20 md:py-32 px-5 md:px-6 lg:px-12">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading kicker="03 — Selected work" title="Projects" />
+        <SectionHeading title="Projects" />
         <ul className="border-t border-border">
           {PROJECTS.map((p) => (
             <li
               key={p.n}
-              className="group border-b border-border py-10 grid md:grid-cols-12 gap-6 items-start hover:bg-background/40 transition-colors cursor-pointer"
+              className="group border-b border-border py-8 md:py-10 grid md:grid-cols-12 gap-4 md:gap-6 items-start hover:bg-background/40 transition-colors cursor-pointer"
             >
-              <div className="md:col-span-1 font-display tracking-wider2 text-xs text-muted-foreground pt-2">
-                {p.n}
-              </div>
-              <div className="md:col-span-4">
-                <h3 className="font-display text-2xl md:text-3xl font-light tracking-tight">
+              <div className="md:col-span-5">
+                <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-light tracking-tight">
                   {p.title}
                 </h3>
               </div>
@@ -267,17 +279,14 @@ function Projects() {
 
 function Certifications() {
   return (
-    <section id="certifications" className="relative py-32 px-6 lg:px-12 bg-deep">
+    <section id="certifications" className="relative py-20 md:py-32 px-5 md:px-6 lg:px-12 bg-deep">
       <div className="mx-auto max-w-6xl grid md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
-          <SectionHeading kicker="04 — Credentials" title="Certifications" />
+          <SectionHeading title="Certifications" />
         </div>
-        <ul className="md:col-span-7 md:col-start-6 border-l border-border">
-          {CERTS.map((c, i) => (
-            <li key={c} className="pl-8 md:pl-12 py-5 border-b border-border flex items-baseline gap-5">
-              <span className="font-display text-xs text-muted-foreground tracking-wider2">
-                0{i + 1}
-              </span>
+        <ul className="md:col-span-7 md:col-start-6 md:border-l md:border-border">
+          {CERTS.map((c) => (
+            <li key={c} className="md:pl-12 py-4 md:py-5 border-b border-border">
               <span className="text-base md:text-lg font-light">{c}</span>
             </li>
           ))}
@@ -289,9 +298,9 @@ function Certifications() {
 
 function Contact() {
   return (
-    <section id="contact" className="relative py-32 px-6 lg:px-12">
+    <section id="contact" className="relative py-20 md:py-32 px-5 md:px-6 lg:px-12">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading kicker="05 — Let's talk" title="Contact" />
+        <SectionHeading title="Contact" />
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <p className="text-xl md:text-2xl font-light leading-relaxed text-foreground/90 max-w-md">
@@ -334,7 +343,7 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="border-t border-border py-10 px-6 lg:px-12">
+    <footer className="border-t border-border py-10 pb-28 md:pb-10 px-6 lg:px-12">
       <div className="mx-auto max-w-6xl flex flex-col sm:flex-row justify-between items-center gap-4 text-xs tracking-wider2 uppercase text-muted-foreground">
         <span>© 2025 Joseph John</span>
         <span>Data Scientist Portfolio</span>
