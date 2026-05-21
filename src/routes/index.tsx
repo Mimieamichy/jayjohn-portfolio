@@ -101,10 +101,11 @@ function Index() {
 }
 
 function BottomNav() {
+  const mobileNav = NAV.filter((n) => n.id !== "about" && n.id !== "certifications");
   return (
     <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-t border-border pb-[env(safe-area-inset-bottom)]">
-      <ul className="grid grid-cols-6">
-        {NAV.map(({ id, label, Icon }) => (
+      <ul className="grid grid-cols-4">
+        {mobileNav.map(({ id, label, Icon }) => (
           <li key={id}>
             <a
               href={`#${id}`}
