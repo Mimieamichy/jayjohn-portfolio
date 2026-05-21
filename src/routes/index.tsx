@@ -101,10 +101,11 @@ function Index() {
 }
 
 function BottomNav() {
+  const mobileNav = NAV.filter((n) => n.id !== "about" && n.id !== "certifications");
   return (
     <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-t border-border pb-[env(safe-area-inset-bottom)]">
-      <ul className="grid grid-cols-6">
-        {NAV.map(({ id, label, Icon }) => (
+      <ul className="grid grid-cols-4">
+        {mobileNav.map(({ id, label, Icon }) => (
           <li key={id}>
             <a
               href={`#${id}`}
@@ -287,7 +288,7 @@ function Certifications() {
         <ul className="md:col-span-7 md:col-start-6 md:border-l md:border-border">
           {CERTS.map((c) => (
             <li key={c} className="md:pl-12 py-4 md:py-5 border-b border-border">
-              <span className="text-base md:text-lg font-light">{c}</span>
+              <span className="text-lg md:text-2xl font-light">{c}</span>
             </li>
           ))}
         </ul>
