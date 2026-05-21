@@ -147,7 +147,7 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-transparent to-background" />
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <p className="font-display tracking-mega text-xs md:text-sm text-muted-foreground mb-8">
-          PORTFOLIO · 2025
+          PORTFOLIO · {new Date().getFullYear()}
         </p>
         <h1 className="font-display font-extralight tracking-mega text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05]">
           DATA&nbsp;SCIENTIST
@@ -346,7 +346,7 @@ function Footer() {
   return (
     <footer className="border-t border-border py-10 pb-28 md:pb-10 px-6 lg:px-12">
       <div className="mx-auto max-w-6xl flex flex-col sm:flex-row justify-between items-center gap-4 text-xs tracking-wider2 uppercase text-muted-foreground">
-        <span>© 2025 Joseph John</span>
+        <span>© {new Date().getFullYear()} Joseph John</span>
         <span>Data Scientist Portfolio</span>
       </div>
     </footer>
