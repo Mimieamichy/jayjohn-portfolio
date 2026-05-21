@@ -288,7 +288,7 @@ function Certifications() {
         <ul className="md:col-span-7 md:col-start-6 md:border-l md:border-border">
           {CERTS.map((c) => (
             <li key={c} className="md:pl-12 py-4 md:py-5 border-b border-border">
-              <span className="text-base md:text-lg font-light">{c}</span>
+              <span className="text-lg md:text-2xl font-light">{c}</span>
             </li>
           ))}
         </ul>
