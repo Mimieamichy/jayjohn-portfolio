@@ -149,10 +149,10 @@ function Hero() {
         <p className="font-display tracking-mega text-xs md:text-sm text-muted-foreground mb-8">
           PORTFOLIO · {new Date().getFullYear()}
         </p>
-        <h1 className="font-display font-extralight tracking-mega text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05]">
+        <h1 className="font-display font-extralight tracking-mega text-2xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05]">
           DATA&nbsp;SCIENTIST
           <br />
-          <span className="inline-block mt-4">PORTFOLIO</span>
+          
         </h1>
         <div className="mt-10 flex items-center gap-4">
           <span className="h-px w-12 hairline" />
@@ -166,10 +166,10 @@ function Hero() {
   );
 }
 
-function SectionHeading({ title }: { kicker?: string; title: string }) {
+function SectionHeading({ title, titleClassName }: { kicker?: string; title: string; titleClassName?: string }) {
   return (
     <div className="mb-12 md:mb-16 flex flex-col items-start">
-      <h2 className="section-title text-2xl sm:text-3xl md:text-5xl text-foreground">{title}</h2>
+      <h2 className={`section-title text-2xl sm:text-3xl md:text-5xl text-foreground ${titleClassName || ""}`}>{title}</h2>
       <span className="mt-6 block h-px w-24 hairline" />
     </div>
   );
@@ -186,8 +186,8 @@ function About() {
           <p className="text-lg md:text-xl font-light leading-relaxed text-foreground/90">
             Passionate, results-driven data-science professional with expertise in
             Python, machine learning and data analysis. I build intelligent
-            systems — from a skin-cancer detection model in TensorFlow to NLP
-            tools powered by LLMs — and enjoy translating complex concepts
+            systems from a skin-cancer detection model in TensorFlow to NLP
+            tools powered by LLMs and enjoy translating complex concepts
             into clear, useful products.
           </p>
           <dl className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-8 text-sm">
@@ -283,7 +283,7 @@ function Certifications() {
     <section id="certifications" className="relative py-20 md:py-32 px-5 md:px-6 lg:px-12 bg-deep">
       <div className="mx-auto max-w-6xl grid md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
-          <SectionHeading title="Certifications" />
+          <SectionHeading title="Certifications" titleClassName="md:text-2xl lg:text-3xl" />
         </div>
         <ul className="md:col-span-7 md:col-start-6 md:border-l md:border-border">
           {CERTS.map((c) => (
@@ -347,7 +347,7 @@ function Footer() {
     <footer className="border-t border-border py-10 pb-28 md:pb-10 px-6 lg:px-12">
       <div className="mx-auto max-w-6xl flex flex-col sm:flex-row justify-between items-center gap-4 text-xs tracking-wider2 uppercase text-muted-foreground">
         <span>© {new Date().getFullYear()} Joseph John</span>
-        <span>Data Scientist Portfolio</span>
+        <span>Portfolio</span>
       </div>
     </footer>
   );
